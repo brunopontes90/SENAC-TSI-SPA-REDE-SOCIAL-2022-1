@@ -3,7 +3,7 @@ import React from "react";
 function Post({ username, content, image, likes, data }){
     return(
         <>
-           {username}
+           <p>Postado por: {username}</p>
         </>
     );
 }
