@@ -1,13 +1,17 @@
-import Header from "./Header";
-import React, { useState } from "react";
+import React from "react";
+import { BrowserRouter, Router, Routes, Route } from "react-router-dom";
+import HomePage from "./pages/home";
+import FeedPage from "./pages/feed";
+import NotFoundPage from "./pages/notFoundPage";
 
-function App() {
-  const [userName, setUserName] = useState("");
-  return (
-    <div>
-      <Header userName={userName} setUserName={setUserName}/>
-    </div>
-  );
+export default function App() {
+    return (
+        <BrowserRouter>
+            <Routes>
+                <Route path="/" element={ <FeedPage /> } />
+                <Route path="/explorer" element={ <HomePage /> } />
+                <Route path="*" element={ <NotFoundPage /> } />
+            </Routes>
+        </BrowserRouter>
+    );
 }
-
-export default App;
