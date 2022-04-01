@@ -1,4 +1,5 @@
 import React from "react";
+import { UserContext } from "../auth";
 import Post from "../components/feed/Post";
 import Layout from "../components/shared/layouts";
 import { getPost } from '../data';
@@ -6,6 +7,9 @@ import { getPost } from '../data';
 export default function FeedPage() {
     
     const posts = [getPost(), getPost(), getPost()];
+
+    const { currentUser } = React.useContext(UserContext);
+    console.log(currentUser);
     return (
         <Layout>
             <div className="row">
