@@ -20,7 +20,7 @@ export default function Post({post}){
                 <span className="d-block fw-bold"><i className="fa-solid fa-thumbs-up"></i>{ post.like == 1 ? `${post.like} like`: `${post.like} likes` }</span>
                 <span className="fw-bold">{post.user.username}: </span>
                 <span>{post.text}</span>
-                { post.comments.map((comments) => <Comment key={comments.id} comment={comments}/>)}
+                { post.comments.map((comments, index) => <Comment key={index} comment={comments}/>)}
             </div>
         </div>
     </article>)
