@@ -13,6 +13,7 @@ export default function LoginPage() {
     const [username, setUsername] = useState("brunopontes90");
     const [password, setPassword] = useState("123456");
     const { setCurrentUser } = React.useContext(UserContext);
+    
     // retorna funçao com objeto e os dados
     const [loadLogin] = useLazyQuery(GET_LOGIN);
     const navigate = useNavigate();
